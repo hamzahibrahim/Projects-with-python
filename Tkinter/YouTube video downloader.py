@@ -11,10 +11,17 @@ while rerun == "y":
         print('your video title: ', the_video.title)
         # =========================
         print('===================')
-        the_video = the_video.streams.get_highest_resolution()
-        print('Please wait until it finsh downloding ......')
+        choices = the_video.streams.filter(progressive=True)
+        print('please choose one:','\n==================')
+        for i in choices:
+            print(i)
+        user_choice = int(input('Please enter your choice (by nubers(1,2,3,....)): '))
+        the_choice = choices[user_choice-1]
         # =========================
-        the_video.download()
+        print('===================')
+        print('Please wait until it finsh downloding ......')
+        the_choice.download()
+        # =========================
         print('Done\' -_- \' (the video is installed in the folder you are in)')
         print('===================')
     except:
