@@ -1,3 +1,4 @@
+#Hamzah Jodeh
 print('-----------------------')
 val = input('first number: ')
 print('-----------------------')
